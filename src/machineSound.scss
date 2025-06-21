@@ -1,0 +1,59 @@
+@mixin apply-map($map) {
+  @each $prop, $value in $map {
+    #{$prop}: $value;
+  }
+}
+
+$center-flex: (
+  display: flex,
+  justify-content: center,
+  align-items: center,
+  text-align: center
+);
+
+
+.machine-container {
+  display: map-get($center-flex, display);
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: rgb(255, 248, 248);
+}
+
+.grid-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.button-machine-sound {
+  padding: 1rem;
+  font-size: 2rem;
+  width: 80px;
+  height: 80px;
+}
+
+.div-information-text {
+  @include apply-map($center-flex);
+  width: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.span-name-song {
+  font-size: 1.2rem;
+  width: 150px;
+  color: black;
+  background-color: rgb(203, 186, 186);
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.input-volume {
+  // -webkit-appearance:-down;
+  width: 80%;
+  height: 40px;
+  margin-top: 2.5rem;
+}

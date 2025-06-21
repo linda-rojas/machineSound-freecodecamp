@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 25px;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.5em #03b7e9aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
