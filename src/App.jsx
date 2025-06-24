@@ -9,9 +9,14 @@ function App() {
 
   const [selectedSong, setSelectedSong] = useState(null);
   const [volume, setVolume] = useState(1);
+  const [moveIsPowerOn, setMoveIsPowerOn] = useState(false);
 
   const selectedInfo = information.find(info => info.songName === selectedSong);
 
+  const handleClick = () => {
+    setMoveIsPowerOn(prev => !prev);
+  };
+  
   return (
     <div className='machine-container'>
       <div className='grid-buttons'>
@@ -25,6 +30,7 @@ function App() {
               isSelected={selectedSong === information.songName}
               onSelect={() => setSelectedSong(information.songName)}
               volume={volume}
+              isPowerOn={!moveIsPowerOn}
             />
         ))
       }
@@ -34,7 +40,9 @@ function App() {
         <figure className='figure-logo'>
           <img src={freecodecampLogo} className="logo react" alt="freecodecampLogo" />
         </figure>
-        {selectedInfo && <span className='span-name-song'>{selectedInfo.displayedText}</span>}
+        <span className='span-name-song'>
+          {selectedInfo && <span className='span-name-song'>{selectedInfo.displayedText}</span>}
+        </span>
         <input 
           type='range'
           className='input-volume'
@@ -43,9 +51,17 @@ function App() {
           step='0.01'
           value={volume}
           onChange={(e) => setVolume(parseFloat(e.target.value))}
-          
         />
-
+      <div className="container" onClick={handleClick}>
+        <div
+        className={`box ${moveIsPowerOn ? "move-left" : ""}`}
+      >
+        </div>
+      </div>
+      <section className='section-on-off'>
+        <span>OFF</span>
+        <span>ON</span>
+      </section>
       </div>
     </div>
   )

@@ -25,3 +25,46 @@
     transform: rotate(360deg);
   }
 }
+
+.input-volume {
+  cursor: pointer;
+}
+
+.container {
+  width: 60px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-color: rgb(47, 43, 43);
+  border-radius: 2px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.box {
+  width: 25px;
+  height: 22px;
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 3px;
+}
+
+.move-left {
+  transform: translateX(-35px);
+  background-color: red;
+}
+
+.section-on-off {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+  color: rgb(42, 39, 39);
+  font-weight: bold;
+  font-size: 14px;
+}

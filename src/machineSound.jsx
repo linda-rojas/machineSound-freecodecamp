@@ -4,10 +4,13 @@ export function MachineSound({
         songName,
         textButton,
         onSelect,
-        volume
+        volume,
+        isPowerOn
 }) {
 
     function handeClick() {
+        if(!isPowerOn) return;
+
         const audio = new Audio(`../public/${songName}.wav`);
             audio.play();
             audio.volume = volume;
