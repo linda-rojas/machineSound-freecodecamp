@@ -2,7 +2,7 @@ import './App.scss'
 import { useState } from "react";
 import { MachineSound } from "./machineSound.jsx";
 import { information } from "./informationObject.js";
-import freecodecampLogo from './assets/FreeCodeCamp_logo.png';
+import freecodecampLogo from '/images/FreeCodeCamp_logo.png';
 
 
 function App() {
