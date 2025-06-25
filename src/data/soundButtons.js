@@ -1,4 +1,4 @@
-export const information = [
+export const soundButtons = [
   {
     songName: "S",
     textButton: "S",

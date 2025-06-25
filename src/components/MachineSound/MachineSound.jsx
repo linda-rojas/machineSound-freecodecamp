@@ -1,4 +1,4 @@
-import "./machineSound.scss"
+import "./MachineSound.scss"
 
 export function MachineSound({
         songName,

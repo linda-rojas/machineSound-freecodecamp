@@ -1,7 +1,7 @@
 import './App.scss'
 import { useState } from "react";
-import { MachineSound } from "./machineSound.jsx";
-import { information } from "./informationObject.js";
+import { MachineSound } from "./components/MachineSound/MachineSound.jsx";
+import { soundButtons } from "./data/soundButtons.js";
 import freecodecampLogo from '/images/FreeCodeCamp_logo.png';
 
 
@@ -11,7 +11,7 @@ function App() {
   const [volume, setVolume] = useState(1);
   const [moveIsPowerOn, setMoveIsPowerOn] = useState(false);
 
-  const selectedInfo = information.find(info => info.songName === selectedSong);
+  const selectedInfo = soundButtons.find(info => info.songName === selectedSong);
 
   const handleClick = () => {
     setMoveIsPowerOn(prev => !prev);
@@ -21,7 +21,7 @@ function App() {
     <div className='machine-container'>
       <div className='grid-buttons'>
       {
-        information.map( information => (
+        soundButtons.map( information => (
             <MachineSound 
               key={information.songName}
               songName={information.songName}
